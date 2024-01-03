@@ -1,17 +1,17 @@
 class Solution {
     public String solution(String myString) {
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
         
         char[] cArr = myString.toCharArray();
         
         for (char c : cArr) {
             if (c < 'l') {
-                answer += 'l';
+                answer.append('l');
             } else {
-                answer += c;
+                answer.append(c);
             }
         }
         
-        return answer;
+        return answer.toString();
     }
 }
