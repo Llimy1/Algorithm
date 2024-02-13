@@ -8,7 +8,8 @@ class Solution {
             count++;
         }
         
-        String answer = "김서방은 " + count + "에 있다";
-        return answer;
+        StringBuilder answer = new StringBuilder();
+        answer.append("김서방은 ").append(count).append("에 있다");
+        return answer.toString();
     }
 }
