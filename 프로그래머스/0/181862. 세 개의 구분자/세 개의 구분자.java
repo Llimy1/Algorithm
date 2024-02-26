@@ -1,29 +1,22 @@
-import java.util.ArrayList;
-import java.util.Arrays;
 class Solution {
-    public ArrayList<String> solution(String myStr) {
+    public String[] solution(String myStr) {
         
-        myStr = myStr.replaceAll("a", " ");
-        myStr = myStr.replaceAll("b", " ");
-        myStr = myStr.replaceAll("c", " ");
-        
-        String[] sArr = myStr.split("\\s*\\s");
-        
-        ArrayList<String> list = new ArrayList<>();
-        if (sArr.length == 0) {
-            list.add("EMPTY");
-        }
-        for (String s : sArr) {
-            list.add(s);                
+        char[] cArr = myStr.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for (char c : cArr) {
+            if (c == 'a' || c == 'b' || c == 'c') {
+                sb.append(" ");
+            } else {
+                sb.append(c);
+            }
         }
         
-        list.removeAll(Arrays.asList(""));
-//         String[] answer = new String[list.size()];
+        String[] str = sb.toString().trim().split("\\s*\\s");
         
-//         for (int i = 0; i < list.size(); i++) {
-//             answer[i] = list.get(i);
-//         }
+        if (str[0].equals("")) {
+            str[0] = "EMPTY";
+        }
         
-        return list;
+        return str;
     }
 }
